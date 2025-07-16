@@ -1,8 +1,17 @@
+import routes from "./routes/routes"
+import { RouterProvider } from "react-router-dom"
+import { Toaster } from "sonner"
+
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Toaster
+        position="top-right"
+        duration={5000}
+        expand={true}
+      />
+      <RouterProvider router={routes} />
+    </>
   )
 }
 
