@@ -77,11 +77,12 @@ export const AuthProvider = ({ children }) => {
                 toast.success('Inicio de sesión exitoso');
                 return true;
             } else {
-                throw new Error(response.data?.message || 'Error al iniciar sesión');
+                toast.error(error.response.data.message || 'Error al iniciar sesión');
+                return false;
             }
         } catch (error) {
-            console.error('Error al iniciar sesión:', error);
-            toast.error(error.message || 'Error al iniciar sesión');
+            // console.error('Error al iniciar sesión:', error);
+            toast.error(error.response.data.message || 'Error al iniciar sesión');
             return false;
         } finally {
             setLoading(false);

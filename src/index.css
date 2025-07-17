@@ -12,5 +12,6 @@
 }
 
 body {
-   
+   background-color: var(--azul-oscuro);
+   user-select: none;
 }
